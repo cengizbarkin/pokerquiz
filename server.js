@@ -13,9 +13,15 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
   console.log('New User Connected');
 
+  socket.broadcast.emit('welcome');
+
+
+
   socket.on('deneme', (data) => {
     console.log('Deneme cagirildi');
-  })
+    console.log(data);
+  });
+
 
 });
 
