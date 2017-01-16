@@ -20,6 +20,8 @@ io.on('connection', (socket) => {
   socket.on('deneme', (data) => {
     console.log('Deneme cagirildi');
     console.log(data);
+
+    socket.emit('newMessage', data);
   });
 
 
